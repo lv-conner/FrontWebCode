@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:base="http://localhost/NugetServer/nuget" xmlns="http://www.w3.org/2005/Atom" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml">
+  <id>http://schemas.datacontract.org/2004/07/</id>
+  <title />
+  <updated>2018-01-16T08:24:53Z</updated>
+  <link rel="self" href="http://localhost/NugetServer/nuget/Packages" />
+  <entry>
+    <id>http://localhost/NugetServer/nuget/Packages(Id='Common',Version='1.0.0')</id>
+    <category term="NuGet.Server.Core.DataServices.ODataPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" href="http://localhost/NugetServer/nuget/Packages(Id='Common',Version='1.0.0')" />
+    <link rel="self" href="http://localhost/NugetServer/nuget/Packages(Id='Common',Version='1.0.0')" />
+    <title type="text">Common</title>
+    <published>2018-01-16T08:17:13Z</published>
+    <updated>2018-01-16T08:17:13Z</updated>
+    <author>
+      <name>18010105</name>
+    </author>
+    <m:action metadata="http://localhost/NugetServer/nuget/$metadata#Container.Download" title="Download" target="http://localhost/NugetServer/nuget/Packages(Id='Common',Version='1.0.0')/Download" />
+    <content type="application/zip" src="http://localhost/NugetServer/nuget/Packages(Id='Common',Version='1.0.0')/Download" />
+    <m:properties>
+      <d:Id>Common</d:Id>
+      <d:Version>1.0.0</d:Version>
+      <d:NormalizedVersion>1.0.0</d:NormalizedVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Title>Common Extension</d:Title>
+      <d:Authors>18010105</d:Authors>
+      <d:Owners>Tim</d:Owners>
+      <d:IconUrl m:null="true" />
+      <d:LicenseUrl m:null="true" />
+      <d:ProjectUrl m:null="true" />
+      <d:DownloadCount m:type="Edm.Int32">-1</d:DownloadCount>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:DevelopmentDependency m:type="Edm.Boolean">false</d:DevelopmentDependency>
+      <d:Description>This is some common library</d:Description>
+      <d:Summary m:null="true" />
+      <d:ReleaseNotes>Version 1.0</d:ReleaseNotes>
+      <d:Published m:type="Edm.DateTime">2018-01-16T08:17:13.3952952Z</d:Published>
+      <d:LastUpdated m:type="Edm.DateTime">2018-01-16T08:17:13.3962976Z</d:LastUpdated>
+      <d:Dependencies></d:Dependencies>
+      <d:PackageHash>V4RrEUAixPe4O43QmgQfH1JVniLtnoiSbGPHUw4fBIABYqlVMYfWxuWleLAdDAUX/GknFrJ7GaVBsiKMYDz31w==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4194</d:PackageSize>
+      <d:Copyright>timlv.com</d:Copyright>
+      <d:Tags m:null="true" />
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:Listed m:type="Edm.Boolean">true</d:Listed>
+      <d:VersionDownloadCount m:type="Edm.Int32">-1</d:VersionDownloadCount>
+      <d:MinClientVersion>1.0</d:MinClientVersion>
+      <d:Language>zh-CN</d:Language>
+    </m:properties>
+  </entry>
+</feed>

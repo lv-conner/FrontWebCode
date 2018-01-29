@@ -1,0 +1,24 @@
+.news {
+    background-color: gray;
+    border: solid 1px black;
+}
+
+.news img {
+    float: left;
+}
+
+.news p {
+    float: right;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    /* 触发 hasLayout */
+    zoom: 1;
+}

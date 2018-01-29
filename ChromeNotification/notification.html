@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Notification</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+</head>
+
+<body>
+    <button onclick="notify()">Click Me to Notify</button>
+    <script type="text/javascript">
+        function notify() {
+            if (window.Notification) {
+                var n = Notification.requestPermission();
+                if (n instanceof Promise) {
+                    var n = new Notification('状态更新提醒', {
+                        body: '你的朋友圈有3条新状态，快去查看吧',
+                        tag: 'linxin',
+                        icon: 'http://blog.gdfengshuo.com/images/avatar.jpg',
+                        requireInteraction: true
+                    })
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

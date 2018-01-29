@@ -1,0 +1,24 @@
+#Content {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+}
+
+div#LoadDisplay {
+    position: relative;
+    top: 50%;
+    margin: 50px auto;
+}
+
+#Load {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: white;
+    z-index: 1024;
+    text-align: center;
+}
