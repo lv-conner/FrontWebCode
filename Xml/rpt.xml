@@ -1,0 +1,39 @@
+<Id>3E66C6CC-B1E8-489C-B139-169B5714230F</Id>
+<ProductId>0E1B2ECD-238C-47C8-866F-D74AEB8D47C8</ProductId>
+<TaskNum>1</TaskNum>
+<TaskFinishedNum>1</TaskFinishedNum>
+<Code>V180100001</Code>
+<Name>开发文档的设计及审核</Name>
+<Status>1</Status>
+<OwnerId>A248142E-995F-4503-909B
+50
+
+</ProductId>
+<TaskNum>2</TaskNum>
+<TaskFinishedNum>1</TaskFinishedNum>
+<Code>S0800</Code>
+<Name>开发文档的设计及审核</Name>
+<Status>1</Status>
+<OwnerId>D46B41BC-5262-4211-A1AF-9AF09E982607</OwnerId>
+<OwnerDateTime>2018-01-29T17:11:56.823</OwnerDateTime>
+<PlanStartDate>201
+>
+    <Code>01</Code>
+    <Name>需求立项01</Name>
+    <Status>1</Status>
+    <OwnerId>39070EB7-65BA-4BBA-834F-306B518AD521</OwnerId>
+    <OwnerDateTime>2018-01-25T09:37:16.893</OwnerDateTime>
+    <PlanStartDate>2018-02-09T00:00:00</PlanStartDate>
+    <PlanEndDate>2018-02-11T00:00:00
+    
+    </PlanEndDat
+77
+
+</OwnerDateTime>
+<PlanStartDate>2018-02-14T00:00:00</PlanStartDate>
+<PlanEndDate>2018-02-22T00:00:00</PlanEndDate>
+<PlanWorkDay>0</PlanWorkDay>
+<PlanWorkHourTotal>168.00</PlanWorkHourTotal>
+<CostWorkHour>0.00</CostWorkHour>
+<CostWorkHourOutPlan>0.00
+</CostWorkHourOutPlan>
