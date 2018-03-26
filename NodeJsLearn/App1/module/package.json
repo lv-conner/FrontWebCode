@@ -1,0 +1,11 @@
+{
+  "name": "configmodule",
+  "version": "1.0.0",
+  "description": "config",
+  "main": "Config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tim",
+  "license": "MIT"
+}

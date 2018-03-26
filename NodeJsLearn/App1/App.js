@@ -1,5 +1,3 @@
-var config = require("./Config");
+var config = require("./module/Config");
 
-var data = config.data;
-
-console.log(JSON.stringify(data));
+console.log(JSON.stringify(config.data));
