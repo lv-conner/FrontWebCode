@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<style>
+    .topPanel .toolbar {
+        float: left;
+        padding-left: 5px;
+    }
+
+    .am-text-nowrap {
+        white-space: nowrap;
+    }
+    .gridPanelDetail{
+        margin-top:5px;
+    }
+</style>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" id="NF-add" authorize="yes"><i class="fa fa-plus"></i>新建</a>
+            <a class="btn btn-primary" id="NF-edit" authorize="yes"><i class="fa fa-pencil-square-o"></i>修改</a>
+            <a class="btn btn-primary" id="NF-del" authorize="yes"><i class="fa fa-trash-o"></i>删除</a>
+            <a class="btn btn-primary" id="NF-submit" authorize="yes"><i class="fa fa-save"></i>提交</a>
+            <a class="btn btn-primary" id="NF-details" authorize="yes"><i class="fa fa-street-view"></i>查看</a>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+    </div>
+</div>
+<div class="gridPanel">
+    <!--表格-->
+    <div class="am-text-nowrap table-responsive" id="mainTable">
+        <table id="EDI850" class="table-condensed"></table>
+    </div>
+    <table id="gridList"></table>
+</div>
+<div class="gridPanel gridPanelDetail">
+    <ul id="ediTab" class="nav nav-tabs">
+        <li class="active">
+            <a href="#EDI855Tab" data-toggle="tab">PO ACK(855)</a>
+        </li>
+        <li>
+            <a href="#EDI860Tab" data-toggle="tab">Order Change(860)</a>
+        </li>
+        <li>
+            <a href="#EDI856Tab" data-toggle="tab">Shipment Notification(856)</a>
+        </li>
+        <li>
+            <a href="#EDI846Tab" data-toggle="tab">Good Receipt From OEM(846)</a>
+        </li>
+        <li>
+            <a href="#EDI810Tab" data-toggle="tab">Invoice(810)</a>
+        </li>
+    </ul>
+    <div id="ediTableContent" class="tab-content">
+        <div class="tab-pane fade in active" id="EDI810Tab">
+            <!--表格-->
+            <div class="am-text-nowrap table-responsive">
+                <table id="EDI810" class="table-condensed"></table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="EDI846Tab">
+            <!--表格-->
+            <div class="am-text-nowrap table-responsive">
+                <table id="EDI846" class="table-condensed"></table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="EDI855Tab">
+            <!--表格-->
+            <div class="am-text-nowrap table-responsive">
+                <table id="EDI855" class="table-condensed"></table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="EDI856Tab">
+            <!--表格-->
+            <div class="am-text-nowrap table-responsive">
+                <table id="EDI856" class="table-condensed"></table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="EDI860Tab">
+            <!--表格-->
+            <div class="am-table am-table-striped am-text-nowrap table-responsive">
+                <table id="EDI860" class="table-condensed"></table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="~/Content/js/BootStarpTable/bootstrap-table.js"></script>
+<link href="~/Content/js/BootStarpTable/bootstrap-table.css" rel="stylesheet" />
+<script src="~/Content/js/BootStarpTable/lang/bootstrap-table-zh-CN.js"></script>
+<script src="~/Content/webjs/EDIIndex.js"></script>
+

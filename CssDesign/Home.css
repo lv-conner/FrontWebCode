@@ -1,0 +1,29 @@
+body,
+div,
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#boxModel,
+#boxModel2 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+
+#boxModel2 {
+    float: right;
+}
+
+#boxModel {
+    float: left;
+}
+
+
+/* #part {
+    margin: 50px;
+    padding: 50px;
+    box-sizing: border-box;
+} */

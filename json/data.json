@@ -1,0 +1,73 @@
+[{
+        "InterfaceType": "Microsoft.AspNetCore.Hosting.IHostingEnvironment",
+        "ServiceType": "Microsoft.AspNetCore.Hosting.Internal.HostingEnvironment"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Hosting.WebHostBuilderContext",
+        "ServiceType": "Microsoft.AspNetCore.Hosting.WebHostBuilderContext"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Configuration.IConfiguration",
+        "ServiceType": "Microsoft.Extensions.Configuration.ConfigurationRoot"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory",
+        "ServiceType": "Microsoft.AspNetCore.Hosting.Builder.ApplicationBuilderFactory"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Http.IHttpContextFactory",
+        "ServiceType": "Microsoft.AspNetCore.Http.HttpContextFactory"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Http.IMiddlewareFactory",
+        "ServiceType": "Microsoft.AspNetCore.Http.MiddlewareFactory"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IOptions`1",
+        "ServiceType": "Microsoft.Extensions.Options.OptionsManager`1"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IOptionsSnapshot`1",
+        "ServiceType": "Microsoft.Extensions.Options.OptionsManager`1"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IOptionsMonitor`1",
+        "ServiceType": "Microsoft.Extensions.Options.OptionsMonitor`1"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IOptionsFactory`1",
+        "ServiceType": "Microsoft.Extensions.Options.OptionsFactory`1"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IOptionsMonitorCache`1",
+        "ServiceType": "Microsoft.Extensions.Options.OptionsCache`1"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Logging.ILoggerFactory",
+        "ServiceType": "Microsoft.Extensions.Logging.LoggerFactory"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Logging.ILogger`1",
+        "ServiceType": "Microsoft.Extensions.Logging.Logger`1"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IConfigureOptions`1[[Microsoft.Extensions.Logging.LoggerFilterOptions, Microsoft.Extensions.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "ServiceType": "Microsoft.Extensions.Logging.DefaultLoggerLevelConfigureOptions"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Hosting.IStartupFilter",
+        "ServiceType": "Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.ObjectPool.ObjectPoolProvider",
+        "ServiceType": "Microsoft.Extensions.ObjectPool.DefaultObjectPoolProvider"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.Internal.ITransportFactory",
+        "ServiceType": "Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.LibuvTransportFactory"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IConfigureOptions`1[[Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions, Microsoft.AspNetCore.Server.Kestrel.Core, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "ServiceType": "Microsoft.AspNetCore.Server.Kestrel.Core.Internal.KestrelServerOptionsSetup"
+    }, {
+        "InterfaceType": "Microsoft.AspNetCore.Hosting.Server.IServer",
+        "ServiceType": "Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IConfigureOptions`1[[Microsoft.Extensions.Logging.LoggerFilterOptions, Microsoft.Extensions.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "ServiceType": "Microsoft.Extensions.Logging.LoggerFilterConfigureOptions"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Options.IOptionsChangeTokenSource`1[[Microsoft.Extensions.Logging.LoggerFilterOptions, Microsoft.Extensions.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "ServiceType": "Microsoft.Extensions.Options.ConfigurationChangeTokenSource`1[[Microsoft.Extensions.Logging.LoggerFilterOptions, Microsoft.Extensions.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Logging.ILoggerProvider",
+        "ServiceType": "Microsoft.Extensions.Logging.Console.ConsoleLoggerProvider"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.Logging.ILoggerProvider",
+        "ServiceType": "Microsoft.Extensions.Logging.Debug.DebugLoggerProvider"
+    }, {
+        "InterfaceType": "Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1[[Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "ServiceType": "Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory"
+    }
