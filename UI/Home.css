@@ -1,0 +1,54 @@
+body,
+div,
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body,
+.page {
+    height: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    color: azure;
+    background-color: black;
+    z-index: 40;
+}
+
+.mainContainer {
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.panel {
+    float: left;
+    height: 100%;
+    background-color: black;
+    display: inline-block;
+}
+
+@media(max-width: 1024px) {
+    .panel {
+        width: 30%;
+    }
+}
+
+@media(max-width:1920px) {
+    .panel {
+        width: 10%;
+    }
+}
+
+.content {
+    width: 90%;
+    height: 100%;
+    background-color: cornsilk;
+    display: inline-block;
+}

@@ -1,0 +1,9 @@
+[
+    { "title": "订单状态", "filed": "EDIState" },
+    { "title": "添加用户", "filed": "AddUser" },
+    { "title": "添加日期", "filed": "AddDate" },
+    { "title": "修改日期", "filed": "ModifyDate" },
+    { "title": "修改用户", "filed": "ModifyUser" },
+    { "title": "发送确认日期", "filed": "PutAcknowledgeDate" },
+    { "title": "获取确认日期", "filed": "GetAcknowledgeDate" }
+]

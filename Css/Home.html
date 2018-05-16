@@ -12,12 +12,29 @@
         .ball-pulse>div {
             background: rgb(255, 17, 0);
         }
+        
+        #loadValue {
+            position: absolute;
+            text-align: center;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1024;
+            background-color: white;
+        }
     </style>
 </head>
 
 <body>
-    <div id="Load">
+    <!-- <div id="Load">
         <div id="LoadDisplay" class="loader-inner ball-pulse">
+        </div>
+    </div> -->
+    <div id="loadValue">
+        <div id="LoadDisplay" class="loader-inner ball-pulse">
+
         </div>
     </div>
     <div id="Content">
@@ -26,4 +43,5 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="loaders.css.js"></script>
 </body>
+
 </html>

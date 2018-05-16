@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>绘制表格</title>
+    <style>
+        body {
+            background: #060e1b;
+            overflow: hidden;
+        }
+        /* Demo Buttons Style */
+        
+        .codrops-demos {
+            font-size: 0.8em;
+            text-align: center;
+            position: absolute;
+            z-index: 99;
+            width: 96%;
+        }
+        
+        .codrops-demos a {
+            display: inline-block;
+            margin: 0.35em 0.1em;
+            padding: 0.5em 1.2em;
+            outline: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border-radius: 2px;
+            font-size: 110%;
+            border: 2px solid transparent;
+            color: #fff;
+        }
+        
+        .codrops-demos a:hover,
+        .codrops-demos a.current-demo {
+            border-color: #383a3c;
+        }
+        
+        #ChartCanvas {
+            background: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            z-index: 1;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <canvas id="canvas"></canvas>
+    <canvas id="ChartCanvas" width="800" height="600"></canvas>
+    <script>
+        "use strict";
+        //数据
+        var chart = {
+            'ChartTitle': '三人成绩折线图', //图头
+            'month': [1, 2, 3, 4, 5, 6], //月份 下面X轴的计量数
+            'data': [{
+                    "name": "小红",
+                    "details": [25, 14, 27, 88, 66, 55], //数据
+                    "color": "rgba(255,127,127,0.7)" //连线以及点的颜色
+                }, {
+                    "name": "小明",
+                    "details": [86, 77, 54, 76, 60, 90],
+                    "color": "rgba(127,255,127,0.7)"
+                }, //数据二维数组
+                {
+                    "name": "小蓝",
+                    "details": [80, 77, 20, 30, 37, 65],
+                    "color": "rgba(127,127,255,0.7)"
+                }
+            ],
+            'startLine': 0, //左边开始的时候的数据
+            'endLine': 120, //左边最高点的数据
+            'line_number': 4, //中间画分成几格子
+            'x_name': '分数', //纵坐标的数量单位
+            'y_name': '月份' //横坐标的数量单位
+        };
+        //获取画折线图的画布
+        var ChartCanvas = document.getElementById('ChartCanvas');
+        console.log(ChartCanvas);
+        var ctx3 = ChartCanvas.getContext('2d');
+        //设定长宽以
+
+        ChartCanvas.width = window.innerWidth;
+        ChartCanvas.height = window.innerHeight;
+        ctx3.fillStyle = "white";
+
+        //画坐标轴以及辅助线
+        function drawAxis(chart) {
+            //标题
+            ctx3.font = "30px microsoft yahei";
+            ctx3.fillText(chart.ChartTitle, 400, 100);
+            //画坐标轴
+            ctx3.lineWidth = 4; //线条的宽度
+            ctx3.strokeStyle = "rgba(255,255,255,0.4)"; //线条的颜色
+            ctx3.lineCap = "round"; //线条头是圆的还是方的
+            debugger;
+            ctx3.moveTo(200, 600);
+            ctx3.lineTo(200, 200);
+            console.log(chart);
+            //画线
+            if (chart) {
+                var metric = 400 / (chart.line_number + 1);
+                var between = (chart.endLine - chart.startLine) / (chart.line_number + 1);
+                for (var i = 0; i <= chart.line_number; i++) {
+                    ctx3.moveTo(200, 600 - (metric * i));
+                    ctx3.lineTo(800, 600 - (metric * i));
+                    ctx3.font = "20px microsoft yahei";
+                    ctx3.fillText(Math.floor(between * i + chart.startLine), 170, 600 - (metric * i));
+                }
+                for (var i = 0; i < chart.data[0].details.length; i++) {
+                    ctx3.moveTo(150 + (i + 1) * (600 / chart.data[0].details.length), 600);
+                    ctx3.lineTo(150 + (i + 1) * (600 / chart.data[0].details.length), 606);
+                    ctx3.font = "20px microsoft yahei";
+                    ctx3.fillText(chart.month[i], 145 + (i + 1) * (600 / chart.data[0].details.length), 628);
+                }
+            }
+            ctx3.stroke();
+            //写度量
+        }
+        //画点
+        function drawPoints(chart) {
+            var points = [];
+            for (var dataTypeNumber = 0; dataTypeNumber < chart.data.length; dataTypeNumber++) {
+                //画一组点
+                var pointsGroup = [];
+                for (var PointNumber = 0; PointNumber < chart.data[dataTypeNumber].details.length; PointNumber++) {
+                    var point = {
+                        "val": chart.data[dataTypeNumber].details[PointNumber],
+                        "x": 150 + (PointNumber + 1) * (600 / chart.data[0].details.length),
+                        "y": 600 - (chart.data[dataTypeNumber].details[PointNumber] / (chart.endLine - chart.startLine)) * 400 + chart.startLine / (chart.endLine - chart.startLine) * 400,
+                        "color": chart.data[dataTypeNumber].color
+                    };
+                    pointsGroup.push(point);
+                    ctx3.fillStyle = chart.data[dataTypeNumber].color;
+                    ctx3.beginPath();
+                    ctx3.arc(point.x, point.y, 5, 0, Math.PI * 2, true);
+                    ctx3.closePath();
+                    ctx3.fill();
+                }
+                points.push(pointsGroup);
+            }
+            console.log(points);
+            return points; //收集点的数据并返回
+        }
+        //连线
+        function linePoints(chart) {
+            var points = drawPoints(chart);
+            console.log(points);
+            ctx3.lineWidth = 3.5;
+            console.log(points.length);
+            for (var i = 0; i < points.length; i++) {
+                var numberLength = points[i].length;
+                console.log(numberLength);
+                ctx3.beginPath();
+                for (var j = 0; j < numberLength - 1; j++) {
+                    ctx3.strokeStyle = points[i][j].color;
+                    console.log(points[i][j].color);
+                    ctx3.moveTo(points[i][j].x, points[i][j].y);
+                    ctx3.lineTo(points[i][j + 1].x, points[i][j + 1].y);
+                }
+                ctx3.stroke();
+            }
+        }
+        //画图例
+        function drawSigns(chart) {
+            var points = drawPoints(chart);
+            ctx3.fillStyle = "white";
+            ctx3.font = "22px microsoft yahei";
+            ctx3.fillText(chart.x_name, 200, 180);
+            ctx3.fillText(chart.y_name, 820, 600);
+            for (var i = 0; i < chart.data.length; i++) {
+                ctx3.beginPath();
+                ctx3.strokeStyle = chart.data[i].color;
+                ctx3.moveTo(810, 300 + i * 30);
+                ctx3.lineTo(830, 300 + i * 30);
+                ctx3.stroke();
+                ctx3.fillStyle = "white";
+                ctx3.font = "20px microsoft yahei";
+                ctx3.fillText(chart.data[i].name, 835, 300 + i * 30);
+            }
+        }
+        //画具体数值
+
+        function drawDetails(chart) {
+            var points = drawPoints(chart);
+            //ctx3.strokeStyle = "rgba(255,255,255,1)";
+            ctx3.fillStyle = "white";
+            ctx3.font = "18px microsoft yahei";
+            for (var i = 0; i < points.length; i++) {
+                for (var j = 0; j < points[i].length; j++) {
+                    ctx3.fillText(points[i][j].val, points[i][j].x - 4, points[i][j].y - 8);
+                }
+            }
+        }
+        //初始化折线图
+        function initChart(chart) {
+            drawAxis(chart);
+            drawPoints(chart);
+            linePoints(chart);
+            drawDetails(chart);
+            drawSigns(chart);
+        }
+        initChart(chart);
+        //canvas是整个星空的画布
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            w = canvas.width = window.innerWidth,
+            h = canvas.height = window.innerHeight,
+
+            hue = 217,
+            stars = [],
+            count = 0,
+            maxStars = 1200;
+        //canvas2是每一颗星星的画法
+        var canvas2 = document.createElement('canvas'),
+            ctx2 = canvas2.getContext('2d');
+        canvas2.width = 100;
+        canvas2.height = 100;
+        var half = canvas2.width / 2,
+            gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half); //中心渐变
+        gradient2.addColorStop(0.025, '#fff');
+        gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+        gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+        gradient2.addColorStop(1, 'transparent');
+
+        ctx2.fillStyle = gradient2;
+        ctx2.beginPath();
+        ctx2.arc(half, half, half, 0, Math.PI * 2);
+        ctx2.fill();
+
+        // End cache
+
+        function random(min, max) {
+            if (arguments.length < 2) {
+                max = min;
+                min = 0;
+            }
+
+            if (min > max) {
+                var hold = max;
+                max = min;
+                min = hold;
+            }
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function maxOrbit(x, y) {
+            var max = Math.max(x, y),
+                diameter = Math.round(Math.sqrt(max * max + max * max));
+            return diameter / 2;
+        }
+
+        var Star = function() {
+
+            this.orbitRadius = random(maxOrbit(w, h)); //星星运动轨迹旋转半径
+            this.radius = random(60, this.orbitRadius) / 12; //星星半径
+            this.orbitX = w / 2;
+            this.orbitY = h / 2;
+            this.timePassed = random(0, maxStars);
+            this.speed = random(this.orbitRadius) / 900000;
+            this.alpha = random(2, 10) / 10;
+
+            count++;
+            stars[count] = this;
+        }
+
+        Star.prototype.draw = function() {
+            var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+                y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+                twinkle = random(10);
+            //实现闪烁的效果
+            if (twinkle === 1 && this.alpha > 0) {
+                this.alpha -= 0.05;
+            } else if (twinkle === 2 && this.alpha < 1) {
+                this.alpha += 0.05;
+            }
+
+            ctx.globalAlpha = this.alpha;
+            ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+            this.timePassed += this.speed;
+        }
+
+        for (var i = 0; i < maxStars; i++) {
+            new Star();
+        }
+
+        function animation() {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 0.8;
+            ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 1)';
+            ctx.fillRect(0, 0, w, h)
+
+            ctx.globalCompositeOperation = 'lighter';
+            for (var i = 1, l = stars.length; i < l; i++) {
+                stars[i].draw();
+            };
+            //drawText();
+            window.requestAnimationFrame(animation);
+        }
+
+
+        function drawChat(WhichCanvas, chat) {}
+
+        animation();
+    </script>
+</body>
+
+</html>

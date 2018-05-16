@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./highChats/highcharts.js"></script>
+    <script src="./highChats/highcharts-more.js"></script>
+    <script src="./highChats/modules/exporting.js"></script>
+    <script src="./highChats/modules/xrange.js"></script>
+    <script src="./highChats/modules/oldie.js"></script>
+    <title>Document</title>
+    <style>
+        #container {
+            min-width: 300px;
+            max-width: 800px;
+            height: 300px;
+            margin: 1em auto;
+        }
+        
+        .container {
+            min-width: 300px;
+            max-width: 800px;
+            height: 300px;
+            margin: 1em auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="container1" class="container"></div>
+    <script>
+        Highcharts.chart('container', {
+            chart: {
+                type: 'xrange'
+            },
+            title: {
+                text: '卡机系统V1.0'
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    week: '%Y/%m/%d'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: '卡机系统V1.0项目进度'
+                },
+                categories: ['项目上线', '数据分析测试', '验收测试', ],
+                reversed: true
+            },
+            tooltip: {
+                dateTimeLabelFormats: {
+                    day: '%Y/%m/%d'
+                }
+            },
+            series: [{
+                name: '项目开发',
+                borderColor: 'gray',
+                pointWidth: 20,
+                data: [{
+                    x: Date.UTC(2018, 2, 6),
+                    x2: Date.UTC(2018, 2, 9),
+                    y: 0,
+                    partialFill: 1.0,
+                    description: "Hello",
+                }, {
+                    x: Date.UTC(2018, 2, 10),
+                    x2: Date.UTC(2018, 2, 13),
+                    y: 0,
+                    partialFill: 1.0
+                }, {
+                    x: Date.UTC(2018, 2, 17),
+                    x2: Date.UTC(2018, 2, 18),
+                    y: 2,
+                    partialFill: 0.25
+                }, {
+                    x: Date.UTC(2018, 2, 18),
+                    x2: Date.UTC(2018, 2, 20),
+                    y: 2,
+                    partialFill: 0.25
+                }, {
+                    x: Date.UTC(2018, 2, 14),
+                    x2: Date.UTC(2018, 2, 15),
+                    y: 1,
+                    partialFill: 0.5
+                }, {
+                    x: Date.UTC(2018, 2, 15),
+                    x2: Date.UTC(2018, 2, 16),
+                    y: 1,
+                    partialFill: 0.5
+                }],
+                dataLabels: {
+                    enabled: true
+                }
+            }]
+        });
+        Highcharts.chart("container1", {
+            chart: {
+                type: "xrange"
+            },
+            title: {
+                text: "项目上线"
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    week: '%Y/%m/%d'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: '项目上线时间安排'
+                },
+                categories: ['项目上线1', '项目上线1'],
+                reversed: true
+            },
+            tooltip: {
+                dateTimeLabelFormats: {
+                    day: '%Y/%m/%d'
+                }
+            },
+            series: [{
+                name: '项目上线',
+                borderColor: 'gray',
+                pointWidth: 20,
+                data: [{
+                    x: Date.UTC(2018, 2, 6),
+                    x2: Date.UTC(2018, 2, 9),
+                    y: 0,
+                    partialFill: 1.0,
+                }, {
+                    x: Date.UTC(2018, 2, 10),
+                    x2: Date.UTC(2018, 2, 13),
+                    y: 1,
+                    partialFill: 1.0
+                }],
+                dataLabels: {
+                    enabled: true
+                }
+            }]
+        })
+    </script>
+</body>
+
+</html>
