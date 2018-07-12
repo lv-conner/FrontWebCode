@@ -1,1 +1,1 @@
-select * from department
+itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;itd-m39@megapt.com.cn;
